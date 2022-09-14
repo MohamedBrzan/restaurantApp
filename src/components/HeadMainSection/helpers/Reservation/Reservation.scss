@@ -1,0 +1,118 @@
+section.reservation {
+  position: relative;
+  z-index: 999;
+
+  .reservation_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000071;
+    display: none;
+  }
+  .head-reservation {
+    display: flex;
+    padding: 10px;
+    .main_reservation_content_title {
+      text-align: center;
+      width: 100%;
+      font-weight: Bold;
+    }
+  }
+  .reservation_content {
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      left: 0;
+      transform: translateX(0);
+      height: 500px;
+      overflow: scroll;
+    }
+    @media screen and (min-width: 992px) {
+      width: 600px;
+      max-width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    box-shadow: 0 0px 8px 2px rgba(193, 230, 231, 0.56);
+    position: fixed;
+    bottom: -100%;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    &.dark {
+      background: black;
+      .tabs {
+        background-color: #ddd;
+
+        .tab {
+          color: black;
+          &.active {
+            background-color: #ccc;
+            border-radius: 12px;
+            display: block;
+          }
+        }
+      }
+      form {
+        label {
+          color: #fff;
+        }
+        input {
+          border: 1px solid #fff;
+        }
+      }
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      width: auto;
+      cursor: pointer;
+      background-color: #f1f1f1;
+      border-radius: 15px;
+      margin: 0 15px;
+      .tab {
+        width: auto;
+        @media screen and (max-width: 768px) {
+          padding: 10px;
+          font-size: 12px;
+        }
+        padding: 10px 35px;
+        margin: 0 5px;
+        font-weight: Bold;
+        &.active {
+          background-color: white;
+          border-radius: 12px;
+          display: block;
+        }
+      }
+    }
+    .tabs-content {
+      div {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+      form {
+        label {
+          color: #777777;
+        }
+        input {
+          border: 1px solid #77777752;
+        }
+        .guest-input {
+          @media screen and (max-width: 768px) {
+            width: 56%;
+          }
+          width: 60%;
+        }
+      }
+    }
+  }
+}

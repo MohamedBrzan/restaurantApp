@@ -1,0 +1,296 @@
+.head-main-section {
+  .home-image {
+    width: 100%;
+    height: 320px;
+    background-image: url('./../../images/home/home.jpeg');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .home-container {
+    hr {
+      margin-top: -10px;
+    }
+  }
+
+  .top-sec {
+    padding-right: 40px;
+    padding-left: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translateY(-50px);
+    picture {
+      overflow: hidden;
+      > img {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+      }
+    }
+    .phone-icon {
+      transform: translateY(-50px);
+      transition: all 0.5s ease-in-out;
+      padding: 30px;
+      background: black;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 5px solid white;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > svg {
+        font-size: 2em;
+        animation: dimensions 3s infinite ease-in-out;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.486);
+        transform: scale(1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
+  }
+  .title,
+  .link {
+    text-align: start;
+  }
+  .icons-links {
+    padding: 15px 0;
+    overflow: hidden;
+    justify-content: center;
+    @media screen and (max-width: 991px) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      justify-content: flex-start;
+    }
+    .icon-link {
+      cursor: pointer;
+      &:hover {
+        transition: all 0.5s ease-in-out;
+        svg {
+          transition: all 0.5s ease-in-out;
+          font-size: 1.6em;
+        }
+      }
+      .icon {
+        position: relative;
+        padding: 5px;
+        box-shadow: 0 1px 8px 2px rgba(0, 225, 255, 0.418);
+        width: 50px;
+        height: 50px;
+        margin: 5px auto;
+        border-radius: 50%;
+        font-size: 1.5em;
+        .new {
+          color: red;
+          position: absolute;
+          top: -15px;
+          right: -15px;
+          font-weight: Bold;
+          text-transform: uppercase;
+          font-size: 0.5em;
+        }
+      }
+      .text {
+        text-align: center;
+        font: {
+          weight: Bold;
+          size: 0.8em;
+        }
+      }
+    }
+  }
+}
+.offer-section {
+  transition: all 0.5s ease-in-out;
+  .todays-offer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    &.goUp {
+      animation: offerPicToUp 1s none ease-in-out;
+    }
+    figure {
+      position: relative;
+      @media screen and (max-width: 768px) {
+        img {
+          width: auto;
+        }
+      }
+      figcaption {
+        position: absolute;
+        top: 47px;
+        left: 112px;
+        color: white;
+        font-weight: bold;
+        font-size: 1.3em;
+        width: 50%;
+        // @media screen and (max-width: 768px) {
+        //   width: 91px;
+        //   word-break: break-all;
+        //   font-size: 0.7em;
+        //   left: 55px;
+        // }
+      }
+    }
+  }
+  .offer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    z-index: 10;
+    &.shutdown {
+      animation: shutdownOfferModal 1s none ease-in-out;
+    }
+  }
+}
+
+.address {
+  position: relative;
+  z-index: 999;
+  .address_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000071;
+    display: none;
+  }
+  .address_content {
+    &.theme-dark {
+      background: black;
+      box-shadow: 0 0px 8px 2px rgba(77, 75, 75, 0.56);
+      .text_intro {
+        margin-bottom: 30px;
+        box-shadow: 0 0px 8px 2px rgba(77, 75, 75, 0.56);
+        padding: 30px;
+      }
+      .links {
+        box-shadow: 0 0px 8px 2px rgba(77, 75, 75, 0.56);
+        padding: 10px;
+        .link {
+          cursor: pointer;
+          a {
+            text-decoration: none;
+            color: black;
+            &.theme-dark {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    // box-shadow: rgba(2, 247, 255, 0.56) 0px 22px 70px 4px;
+    box-shadow: 0 0px 8px 2px rgba(193, 230, 231, 0.56);
+    max-width: 600px;
+    position: fixed;
+    bottom: -42%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+
+    .address_powered_by,
+    .address_about_us {
+      font: {
+        weight: Bold;
+        size: 1em;
+      }
+    }
+    .address_about_us {
+      text-align: start;
+    }
+    .head-address {
+      display: flex;
+      padding: 15px;
+      margin-bottom: 10px;
+      .address_powered_by {
+        width: 100%;
+        text-align: center;
+      }
+      div.icon {
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &.rotation {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .text_intro {
+      margin-bottom: 30px;
+      box-shadow: 0 0px 8px 2px rgba(193, 230, 231, 0.56);
+      padding: 30px;
+    }
+    .links {
+      box-shadow: 0 0px 8px 2px rgba(193, 230, 231, 0.56);
+      padding: 10px;
+      .link {
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: black;
+          &.theme-dark {
+            color: white;
+          }
+        }
+      }
+    }
+    .address_about_us_logo_name {
+      margin: 30px auto;
+    }
+  }
+}
+
+@keyframes dimensions {
+  from {
+    font-size: 2em;
+  }
+  to {
+    font-size: 2.3em;
+  }
+}
+
+@keyframes shutdownOfferModal {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes offerPicToUp {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 33%;
+  }
+}

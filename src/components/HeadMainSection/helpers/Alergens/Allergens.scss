@@ -1,0 +1,76 @@
+section.allergens {
+  position: relative;
+  z-index: 999;
+
+  .allergens_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000071;
+    display: none;
+  }
+
+  .allergens_content {
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      left: 0;
+      transform: translateX(0);
+      height: 500px;
+      overflow: scroll;
+    }
+    @media screen and (min-width: 992px) {
+      width: 600px;
+      max-width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    box-shadow: 0 0px 8px 2px rgba(193, 230, 231, 0.56);
+    position: fixed;
+    bottom: -100%;
+    max-height: 60vh;
+    overflow-y: scroll;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    &.dark {
+      background: black;
+    }
+    .icon {
+      cursor: pointer;
+    }
+    .data-row {
+      margin: 0;
+    }
+    .data-col {
+      text-align: start;
+      margin-bottom: 5px;
+    }
+    .head-allergens {
+      display: flex;
+      padding: 10px;
+      .main_allergens_content_title {
+        text-align: center;
+        width: 100%;
+        font-weight: Bold;
+      }
+    }
+    .allergens-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: start;
+    }
+    .allergens-title {
+      font-size: 0.8em;
+      font-weight: Bold;
+      word-spacing: 0.3px;
+      letter-spacing: 0.3px;
+    }
+    .allergens-description {
+      font-size: 0.6em;
+    }
+  }
+}
